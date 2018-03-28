@@ -13,13 +13,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 let config = {
   "env": process.env.NODE_ENV //"development" 、"production"  
 
-}; //开发环境
+};
+
+if (false) {
+  console.log(123);
+} //开发环境
+
 
 if (process.env.NODE_ENV == 'development') {
   const localConfig = {
     port: 8081
   };
-  config = _lodash2.default.extend(config.localConfig);
+  config = _lodash2.default.extend(config, localConfig);
 } //线上环境
 
 
